@@ -1,0 +1,379 @@
+@use 'variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+// General styling
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-family: 'Kumbh Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.body {
+  background-color: var.$color-base;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+p {
+  font-size: 1.55rem;
+  color: var.$color-text--light;
+}
+
+input,
+button,
+select {
+  border: none;
+  background: none;
+  outline: none;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var.$color-text;
+}
+
+input,
+textarea {
+  &::placeholder {
+    color: var.$color-placeholder;
+  }
+}
+
+// End of General styling
+
+// Utility classes
+.container {
+  height: 100%;
+  /* Mobile */
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  /* Tablet */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    width: 723px;
+    margin: 0 auto;
+  }
+
+  /* Small Monitor */
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    width: 933px;
+    margin: 0 auto;
+  }
+
+  /* Large Monitor */
+  @media only screen and (min-width: 1200px) {
+    width: 1127px;
+    margin: 0 auto;
+  }
+}
+
+.container--slim {
+  max-width: 740px;
+  margin: 0 1.8rem;
+  @media only screen and (min-width: 788px) {
+    margin: 0 auto;
+  }
+}
+
+// Hidden
+.hidden {
+  display: none !important;
+
+  &--sm {
+    @media (max-width: 499px) {
+      display: none !important;
+    }
+  }
+  &--md {
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+  &--lg {
+    @media (max-width: 991px) {
+      display: none !important;
+    }
+  }
+}
+// End of Hidden
+
+.job-location {
+  color: var.$color-primary;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+// End of Utility classes
+
+// Headings
+.heading {
+  &--lg {
+    font-size: 2.2rem;
+    color: var.$color-text;
+
+    @media (min-width: 450px) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2.9rem;
+    }
+  }
+  &--md {
+  }
+  &--sm {
+    font-size: 2rem;
+    color: var.$color-text;
+  }
+}
+// End of Headings
+
+// Buttons
+// Theme toggler
+.btn-theme-toggler {
+  cursor: pointer;
+  width: 11rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  &:hover {
+    .btn-theme-toggler__slider {
+      &::after {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__slider {
+    background: #fff;
+    width: 5rem;
+    height: 2.4rem;
+    border-radius: 2rem;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      height: 1.4rem;
+      width: 1.4rem;
+      border-radius: 50%;
+      background: var.$color-primary;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: all 0.12s ease-in;
+    }
+    &--dark {
+      &::after {
+        transform: translateX(2.5rem);
+      }
+    }
+  }
+}
+// End of Theme toggler
+
+// Primary button
+.btn-primary {
+  background: var.$color-primary;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var.$color-white;
+  border-radius: 0.5rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(var.$color-primary, 0.7);
+  }
+}
+
+.btn-secondary {
+  background: rgba(var.$color-placeholder, 0.2);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var.$color-white;
+  border-radius: 0.5rem;
+  padding: 1.5rem 2.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(var.$color-placeholder, 0.4);
+  }
+}
+.body--light .btn-secondary {
+  color: var.$color-primary;
+  background: rgba(var.$color-primary, 0.11);
+
+  &:hover {
+    background: rgba(var.$color-primary, 0.25);
+  }
+}
+// End of Primary button
+// End of Buttons
+
+// Components
+// SelectInput
+.select {
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  color: var.$color-text;
+
+  &--fade {
+    color: var.$color-placeholder;
+  }
+
+  option {
+    color: var.$color-text;
+    font-size: 0.9em;
+    background: var.$color-foreground;
+  }
+}
+// End of SelectInput
+
+// CheckBox
+.checkbox,
+.checkbox--checked {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  background: var.$color-checkbox-bg;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  img {
+    display: none;
+  }
+
+  &--checked {
+    background: var.$color-primary;
+    color: var.$color-base;
+
+    img {
+      width: 50%;
+      display: block;
+    }
+  }
+}
+// End of CheckBox
+
+// Message
+.message {
+  text-align: center;
+  &__content {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var.$color-primary;
+    font-weight: 700;
+
+    @media (max-width: 400px) {
+      font-size: 2.3rem;
+    }
+  }
+
+  i {
+    margin-right: 1rem;
+  }
+}
+// End of Message
+
+// Spinner
+.spinner {
+  display: block;
+  width: 80px;
+  height: 80px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 0.8rem solid #fff;
+    border-color: var.$color-primary transparent var.$color-primary transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// End of Spinner
+
+// Modal
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  padding: 0 2rem;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  &__container {
+    width: 98vw;
+    margin: 0 auto;
+
+    @media (min-width: 430px) {
+      width: 40rem;
+    }
+  }
+}
+// End of Modal
+
+// End of Components

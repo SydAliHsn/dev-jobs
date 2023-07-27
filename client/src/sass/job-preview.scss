@@ -1,0 +1,74 @@
+@use 'variables' as var;
+
+// JobPreview
+.job-preview {
+  background: var.$color-foreground;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 3rem;
+  position: relative;
+
+  @media (max-width: 300px) {
+    padding: 2rem;
+  }
+
+  &__logo-container {
+    width: 5rem;
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 1.3rem;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  &__logo {
+    max-width: 85%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__company {
+    color: var.$color-text--light;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  &__description {
+    margin-top: 1.8rem;
+    margin-bottom: 6.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    div {
+      color: var.$color-text--light;
+      font-size: 1.6rem;
+      width: 20rem;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__bullet {
+    line-height: 1rem;
+    font-size: 2.8rem;
+    margin: 0 1rem;
+  }
+
+  &__position {
+    margin: 1rem 0;
+  }
+
+  &__location {
+    position: absolute;
+    bottom: 3rem;
+  }
+}
+// End of JobPreview

@@ -1,0 +1,23 @@
+.body--light {
+  --color-base: #f2f2f2;
+  --color-foreground: #ffff;
+  --color-text: #121721;
+  --color-text--light: #6e8098;
+}
+
+.body--dark {
+  --color-base: #121721;
+  --color-foreground: #19202d;
+  --color-text: #ffffff;
+  --color-text--light: #9daec2;
+}
+
+$color-primary: #5964e0;
+$color-white: #fff;
+$color-border--light: #6e809833;
+$color-placeholder: #8c8f96;
+$color-checkbox-bg: rgba(#adadad, 0.25);
+$color-base: var(--color-base);
+$color-foreground: var(--color-foreground);
+$color-text: var(--color-text);
+$color-text--light: var(--color-text--light);

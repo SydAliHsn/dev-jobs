@@ -1,0 +1,24 @@
+.job-detail {
+  position: relative;
+
+  .company-header {
+    margin-top: -3rem;
+
+    @media (min-width: 768px) {
+      margin-top: -5rem;
+    }
+  }
+  .job-summary {
+    margin-top: 4rem;
+  }
+
+  .job-footer {
+    margin-top: 8rem;
+  }
+
+  .spinner {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 200%);
+  }
+}

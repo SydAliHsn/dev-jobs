@@ -1,0 +1,30 @@
+@use 'variables' as var;
+
+.job-footer {
+  background-color: var.$color-foreground;
+
+  .container--slim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+
+    div {
+      max-width: 50%;
+
+      @media (max-width: 650px) {
+        display: none;
+      }
+    }
+  }
+
+  &__position {
+    padding-bottom: 1rem;
+  }
+
+  &__btn-apply {
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+  }
+}

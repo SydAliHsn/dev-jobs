@@ -1,0 +1,15 @@
+// Nav
+.nav {
+  height: 70%;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo {
+    width: 120px;
+  }
+}
+// End of Nav

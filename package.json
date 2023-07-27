@@ -1,0 +1,42 @@
+{
+  "name": "devjobs-api",
+  "version": "1.0.0",
+  "description": "Devjobs Api",
+  "main": "server.js",
+  "engines": {
+    "node": "16.13.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "heroku-postbuild": "npm run install-client && npm run build-client",
+    "start": "node server.js"
+  },
+  "author": "ali",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "datamuse": "^1.0.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^6.3.0",
+    "helmet": "^5.0.2",
+    "mongoose": "^6.2.8",
+    "slugify": "^1.6.5",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "morgan": "^1.10.0",
+    "prettier": "^2.5.1"
+  }
+}

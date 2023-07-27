@@ -1,0 +1,13 @@
+@use 'variables' as var;
+.header {
+  background: url(../assets/mobile/bg-pattern-header.svg) no-repeat;
+  background-size: cover;
+  height: 17rem;
+  width: 100vw;
+  @media (min-width: 768px) {
+    background: url(../assets/desktop/bg-pattern-header.svg) no-repeat;
+  }
+  @media (min-width: 1500px) {
+    background-size: 100% 100%;
+  }
+}
