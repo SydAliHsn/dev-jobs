@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -29,11 +30,15 @@ app.use(mongoSanitize());
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(`${__dirname}/client/build`));
-}
-
 app.use('/api/v1/jobs', jobRouter);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+  app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 // Handle request for non-existent routes
 app.all('*', (req, res, next) => {

@@ -14,6 +14,7 @@ const JobDetail = () => {
   const { job: jobData, status } = useSelector(state => state.selectedJob);
 
   const { id } = useParams();
+
   useEffect(() => {
     if (!jobData) dispatch(getJob(id));
   }, []);
